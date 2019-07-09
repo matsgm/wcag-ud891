@@ -34,15 +34,13 @@
   };
 
   Checkbox.prototype.toggle = function() {
-    if (this.el.hasAttribute('checked')) {
+    if (this.el.getAttribute('aria-checked') == 'true') {
+      this.el.setAttribute('aria-checked', 'false');
       this.el.removeAttribute('checked');
 
-      // Hmm.
-
     } else {
+      this.el.setAttribute('aria-checked', 'true');
       this.el.setAttribute('checked', '');
-
-      // Hmmmmm.
 
     }
   };

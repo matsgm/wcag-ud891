@@ -15,22 +15,25 @@
         <input type="text" id="name" name="name">
       </div>
 
-      <h3>Drink Options</h3>
+      <h3 id="group_label_1">Drink Options</h3>
 
-      <ul id="group1" class="radiogroup">
-        <li class="radio">
+      <ul id="group1"
+          class="radiogroup"
+          aria-labelledby="group_label_1"
+          aria-activedescendant="" >
+        <li id="r1" class="radio" aria-labelledby="content">
           Water
         </li>
-        <li class="radio">
+        <li id="r2" class="radio" aria-labelledby="content">
           Tea
         </li>
-        <li class="radio">
+        <li id="r3" class="radio" aria-labelledby="content">
           Coffee
         </li>
-        <li class="radio">
+        <li id="r4" class="radio" aria-labelledby="content">
           Cola
         </li>
-        <li class="radio">
+        <li id="r5" class="radio" aria-labelledby="content">
           Ginger Ale
         </li>
       </ul>

@@ -60,10 +60,17 @@ function openModal(e) {
     // ESCAPE
     if (e.keyCode === 27) {
       closeModal();
+      
     }
   }
 
   // FIXME: hide non-modal content from screen readers
+  // Selects all elements
+  var modalElements = document.getElementsByClassName('modal-overlay');
+  modalElements[0].setAttribute('aria-modal', 'true');
+
+  // Selects the first element
+  document.querySelector('.wrapper').setAttribute('aria-hidden', 'true');
 }
 
 function closeModal() {
@@ -75,4 +82,8 @@ function closeModal() {
   focusedElementBeforeModal.focus();
 
   // FIXME: don't forget to make main content screen reader accessible again.
+  var modalElements = document.getElementsByClassName('modal-overlay');
+  modalElements[0].setAttribute('aria-modal', 'false');
+
+  document.querySelector('.wrapper').removeAttribute('aria-hidden');
 }

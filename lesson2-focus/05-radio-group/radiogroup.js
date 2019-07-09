@@ -33,6 +33,9 @@
 
         // This seems like a good place to do some stuff :)
 
+        if (this.focusedIdx > 0) this.focusedIdx -- ;
+        this.changeFocus(this.focusedIdx);
+
         break;
 
       }
@@ -44,12 +47,15 @@
 
         // This seems like a good place to do some stuff :)
 
+        if (this.focusedIdx < 4) this.focusedIdx ++ ;
+        this.changeFocus(this.focusedIdx);
+
         break;
       }
 
     }
 
-    this.changeFocus(this.focusedIdx); // <-- Hmm, interesting...
+    //this.changeFocus(this.focusedIdx); // <-- Hmm, interesting...
   };
 
   RadioGroup.prototype.changeFocus = function(idx) {
